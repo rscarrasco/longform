@@ -1,0 +1,5 @@
+#/bin/bash
+
+docker container exec longform-dev rm -r /bitnami/dokuwiki/lib/tpl/longform 2> /dev/null
+docker cp ./src/ longform-dev:/bitnami/dokuwiki/lib/tpl/
+docker container exec longform-dev mv /bitnami/dokuwiki/lib/tpl/src /bitnami/dokuwiki/lib/tpl/longform
